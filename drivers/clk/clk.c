@@ -2261,7 +2261,7 @@ int clk_set_rate(struct clk *clk, unsigned long rate)
 		return 0;
 
 	/* prevent racing with updates to the clock topology */
-	pr_info("dipayan : set new freq : %lu", rate);
+	pr_info("dipayan : device : %s ,set new freq : %lu", clk->dev_id,rate);
 	clk_prepare_lock();
 
 	if (clk->exclusive_count)
