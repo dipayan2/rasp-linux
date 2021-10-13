@@ -224,6 +224,7 @@ struct cpufreq_policy *cpufreq_cpu_get(unsigned int cpu)
 		return NULL;
 
 	/* get the cpufreq driver */
+	pr_info("dipayan : cpufreq get freqs");
 	read_lock_irqsave(&cpufreq_driver_lock, flags);
 
 	if (cpufreq_driver) {
