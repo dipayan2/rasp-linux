@@ -301,7 +301,7 @@ __ATTR(_name, 0444, show_##_name, NULL)
 static struct kobj_attribute _name =		\
 __ATTR(_name, 0644, show_##_name, store_##_name)
 
-
+/* dipayan Lets modify this code to the end -- this is a good starting point*/
 struct cpufreq_driver {
 	char		name[CPUFREQ_NAME_LEN];
 	u16		flags;
