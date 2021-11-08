@@ -84,7 +84,7 @@ static unsigned long find_available_min_freq(struct devfreq *devfreq)
 {
 	struct dev_pm_opp *opp;
 	unsigned long min_freq = 0;
-
+	pr_info("dipayan : Dev Freq min freq running");
 	opp = dev_pm_opp_find_freq_ceil(devfreq->dev.parent, &min_freq);
 	if (IS_ERR(opp))
 		min_freq = 0;
@@ -98,7 +98,7 @@ static unsigned long find_available_max_freq(struct devfreq *devfreq)
 {
 	struct dev_pm_opp *opp;
 	unsigned long max_freq = ULONG_MAX;
-
+	pr_info("dipayan : Dev Freq min freq running");
 	opp = dev_pm_opp_find_freq_floor(devfreq->dev.parent, &max_freq);
 	if (IS_ERR(opp))
 		max_freq = 0;
@@ -396,7 +396,7 @@ int update_devfreq(struct devfreq *devfreq)
 	unsigned long freq, min_freq, max_freq;
 	int err = 0;
 	u32 flags = 0;
-
+	pr_info("dipayan : Updated devfreq")
 	lockdep_assert_held(&devfreq->lock);
 
 	if (!devfreq->governor)
