@@ -350,6 +350,7 @@ static int devfreq_set_target(struct devfreq *devfreq, unsigned long new_freq,
 	struct devfreq_freqs freqs;
 	unsigned long cur_freq;
 	int err = 0;
+	pr_info("dipayan : devfreq");
 
 	if (devfreq->profile->get_cur_freq)
 		devfreq->profile->get_cur_freq(devfreq->dev.parent, &cur_freq);
